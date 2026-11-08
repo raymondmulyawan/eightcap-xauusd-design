@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, nocache">
+<meta name="googlebot" content="noindex, nofollow, noimageindex, max-image-preview:none, max-snippet:0">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<title>XAU/USD live price and chart | Trade gold CFDs | Eightcap</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body { margin:0; background:#E9E9E9; font-family:'Work Sans',system-ui,sans-serif; color:#000; }
+a { color:#000; text-decoration:underline; text-underline-offset:2px; }
+a:hover { color:#694AFF; }
+* { box-sizing:border-box; }
+</style>
+</helmet>
+
+<div data-screen-label="XAU/USD page" style="width:1440px; margin:48px auto; background:#fff; display:flex; flex-direction:column;">
+
+  <!-- Nav + hero (new H1) -->
+  <div data-screen-label="00 Header" style="background:#fff; border-bottom:3px solid #D5F1E1; display:flex; align-items:center; justify-content:space-between; padding:20px 48px;">
+    <img src="assets/eightcap-logo.png" alt="Eightcap" style="height:44px; width:auto; display:block;">
+    <div style="display:flex; align-items:center; gap:24px; font-size:17px; font-weight:500;">
+      <span style="font-size:20px;" aria-label="Search">⌕</span>
+      <span style="display:flex; align-items:center; gap:6px;">◎ EN ⌄</span>
+      <div style="display:flex; gap:10px;">
+        <span style="padding:14px 18px; background:#EBEBEB; border-radius:4px; font-weight:600;">Login</span>
+        <span style="padding:14px 18px; background:#694AFF; color:#fff; border-radius:4px; font-weight:600;">Trade now</span>
+      </div>
+      <span style="display:flex; flex-direction:column; gap:5px; margin-left:16px;" aria-label="Menu"><span style="width:22px; height:2px; background:#000;"></span><span style="width:22px; height:2px; background:#000;"></span></span>
+    </div>
+  </div>
+  <div data-screen-label="01 Hero" style="background:#D5F1E1;">
+    <div style="padding:28px 80px 48px;">
+      <div style="display:flex; gap:10px; font-size:13px; font-weight:500; color:#1E3A2A; margin-bottom:48px;"><span>Home</span><span>/</span><span>Markets</span><span>/</span><span>Commodities</span><span>/</span><span style="color:#4E6B5A;">XAU/USD</span></div>
+      <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:32px;">
+        <div style="display:flex; flex-direction:column; gap:16px;">
+          <h1 style="margin:0; font-size:72px; font-weight:700; letter-spacing:-0.045em; line-height:0.95;">XAU/USD live price and chart</h1>
+          <p style="margin:0; font-size:19px; line-height:1.55; max-width:700px; text-wrap:pretty;">Track the XAUUSD price in real time and trade gold against the US dollar as a CFD. Go long or short from 0.01 lots, with spreads from 1.2 pips and no commission, on TradingView, MT4, MT5 and TradeLocker.</p>
+        </div>
+        <div style="display:flex; gap:8px; font-size:13px; font-weight:600;"><span style="padding:6px 12px; background:#fff; border-radius:999px;">Commodity CFD</span><span style="padding:6px 12px; background:#fff; border-radius:999px;">Metals</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 1a chart + trade panel -->
+  <div data-screen-label="02 Live price + sentiment" style="display:flex; flex-direction:column;">
+    <div style="display:grid; grid-template-columns:minmax(0,1fr) 400px; gap:32px; padding:40px 80px 24px;">
+      <div style="display:flex; flex-direction:column; gap:16px;">
+        <div style="display:flex; align-items:baseline; gap:14px;"><span style="font-size:40px; font-weight:700; letter-spacing:-0.03em;">4,070.59</span><span style="font-size:16px; font-weight:600;">USD</span><span style="font-size:16px; font-weight:600; color:#B42318;">−17.68 (−0.43%)</span></div>
+        <img src="assets/xau-tv-chart.png" alt="XAUUSD live chart on TradingView" style="width:100%; height:auto; display:block; border:1px solid #E3E3E3; border-radius:4px;">
+        <div style="display:flex; gap:8px; font-size:13px; font-weight:600;">
+          <sc-for list="{{ tfs }}" as="t" hint-placeholder-count="6"><span style="padding:8px 12px; background:{{ t.bg }}; color:{{ t.fg }}; border-radius:4px; cursor:pointer;" onClick="{{ t.pick }}">{{ t.l }}</span></sc-for>
+        </div>
+      </div>
+      <div style="border:1px solid #D9D9D9; border-radius:4px; display:flex; flex-direction:column;">
+        <div style="display:grid; grid-template-columns:1fr 1fr; position:relative;">
+          <div style="padding:18px 20px; background:#FDE8E8; display:flex; flex-direction:column; gap:2px;"><span style="font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.06em; color:#A11D1D;">Sell</span><span style="font-size:22px; font-weight:700;">4,070.59</span></div>
+          <div style="padding:18px 20px; background:#D5F1E1; display:flex; flex-direction:column; gap:2px; align-items:flex-end;"><span style="font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.06em; color:#1B703F;">Buy</span><span style="font-size:22px; font-weight:700;">4,070.71</span></div>
+          <span style="position:absolute; left:50%; bottom:-11px; transform:translateX(-50%); background:#fff; border:1px solid #D9D9D9; border-radius:4px; font-size:12px; font-weight:600; padding:2px 8px;">Spread 1.2</span>
+        </div>
+        <div style="padding:28px 20px 20px; display:flex; justify-content:space-between; font-size:13px;"><span>Low <strong>4,033.37</strong></span><span>High <strong>4,092.78</strong></span></div>
+        <div style="padding:8px 20px 24px; border-top:1px solid #EBEBEB; display:flex; flex-direction:column; gap:10px;">
+          <div style="font-size:14px; font-weight:700; padding-top:16px;">Trader sentiment</div>
+          <div style="display:flex; height:10px; border-radius:999px; overflow:hidden; gap:3px;"><span style="width:{{ longPct }}%; background:#1B703F;"></span><span style="flex:1; background:#D6453D;"></span></div>
+          <div style="display:flex; justify-content:space-between; font-size:13px; font-weight:600;"><span style="color:#1B703F;">{{ longPct }}% long</span><span style="color:#B42318;">{{ shortPct }}% short</span></div>
+          <p style="margin:0; font-size:15px; line-height:1.45;"><strong>{{ majorityPct }}%</strong> of Eightcap client accounts are <strong>{{ bias }}</strong> XAU/USD.</p>
+        </div>
+        <div style="padding:20px; background:#F6F6F6; display:flex; flex-direction:column; gap:10px; margin-top:auto;">
+          <span style="padding:14px 22px; background:#694AFF; color:#fff; border-radius:4px; font-size:16px; font-weight:600; text-align:center;">Trade XAU/USD</span>
+          <span style="padding:13px 22px; background:#fff; border:1px solid #D9D9D9; border-radius:4px; font-size:15px; font-weight:500; text-align:center;">Try on a free demo</span>
+        </div>
+      </div>
+    </div>
+    <p style="margin:0; padding:0 80px 32px; font-size:12px; line-height:1.5; color:#4A4A4A;">Prices are indicative. Sentiment reflects open Eightcap client positions, updated periodically, and is not a recommendation or indicator of future performance.</p>
+  </div>
+
+  <!-- More about XAUUSD (existing) -->
+  <div data-screen-label="03 More about XAUUSD" style="padding:72px 80px; display:flex; flex-direction:column; align-items:center; gap:40px;">
+    <h2 style="margin:0; font-size:48px; font-weight:700; letter-spacing:-0.045em; line-height:1;">More about XAUUSD</h2>
+    <div style="width:100%; max-width:1000px; display:flex; flex-direction:column;">
+      <sc-for list="{{ specs }}" as="s" hint-placeholder-count="18">
+        <div style="display:grid; grid-template-columns:minmax(0,1fr) 320px; gap:24px; padding:14px 0; border-bottom:1px solid #E3E3E3; font-size:15px;"><span>{{ s.k }}</span><span style="font-weight:500;">{{ s.v }}</span></div>
+      </sc-for>
+    </div>
+  </div>
+
+  <!-- What is XAU/USD? -->
+  <div data-screen-label="04 What is XAU/USD" style="padding:88px 80px; display:grid; grid-template-columns:minmax(0,1fr) 440px; gap:80px; border-top:1px solid #EBEBEB;">
+    <div style="display:flex; flex-direction:column; gap:20px;">
+      <h2 style="margin:0; font-size:48px; font-weight:700; letter-spacing:-0.045em; line-height:1;">What is XAU/USD?</h2>
+      <p style="margin:0; font-size:18px; line-height:1.65; text-wrap:pretty;">XAU/USD is the price of one troy ounce of gold quoted in US dollars. "XAU" is the ISO code for gold, so when the XAUUSD price reads 4,070, one ounce costs US$4,070.</p>
+      <p style="margin:0; font-size:18px; line-height:1.65; text-wrap:pretty;">Gold CFD trading lets you speculate on that price in either direction without buying or storing physical bullion. Go long if you think gold will rise, or short if you expect it to fall, and use the XAUUSD live chart above to plan your entries and exits.</p>
+      <div style="display:flex; gap:12px; margin-top:8px;"><span style="padding:14px 22px; background:#694AFF; color:#fff; border-radius:4px; font-size:16px; font-weight:600;">Trade XAU/USD</span><span style="padding:14px 22px; background:#EBEBEB; border-radius:4px; font-size:16px; font-weight:500;">Read gold news</span></div>
+    </div>
+    <div style="background:#F6F6F6; border-radius:4px; padding:8px 28px;">
+      <sc-for list="{{ facts }}" as="f" hint-placeholder-count="6">
+        <div style="display:flex; justify-content:space-between; gap:16px; padding:16px 0; border-bottom:1px solid #DDDDDD; font-size:15px;"><span style="color:#4A4A4A;">{{ f.k }}</span><span style="font-weight:600; text-align:right;">{{ f.v }}</span></div>
+      </sc-for>
+      <p style="margin:0; padding:14px 0 18px; font-size:12px; color:#4A4A4A;">Taken from the instrument specifications above.</p>
+    </div>
+  </div>
+
+  <!-- What moves the XAU/USD price? -->
+  <div data-screen-label="05 What moves XAU/USD" style="padding:88px 80px; display:flex; flex-direction:column; gap:48px; border-top:1px solid #EBEBEB;">
+    <div style="display:flex; flex-direction:column; gap:16px; max-width:820px;">
+      <h2 style="margin:0; font-size:48px; font-weight:700; letter-spacing:-0.045em; line-height:1;">What moves the XAU/USD price?</h2>
+      <p style="margin:0; font-size:18px; line-height:1.6;">Gold reacts to the dollar, interest rates and risk appetite. Knowing these drivers helps you read the XAUUSD price and the calendar events below.</p>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:20px;">
+      <sc-for list="{{ drivers }}" as="d" hint-placeholder-count="4">
+        <div style="background:#F6F6F6; border-radius:4px; padding:28px; display:flex; flex-direction:column; gap:12px;">
+          <span style="font-size:14px; font-weight:700; color:#1B703F;">{{ d.n }}</span>
+          <div style="font-size:20px; font-weight:600; line-height:1.25; letter-spacing:-0.01em;">{{ d.t }}</div>
+          <p style="margin:0; font-size:15px; line-height:1.6;">{{ d.b }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <!-- Why trade XAU/USD with Eightcap? -->
+  <div data-screen-label="06 Why trade XAU/USD" style="padding:88px 80px; display:flex; flex-direction:column; gap:48px; border-top:1px solid #EBEBEB;">
+    <div style="display:flex; justify-content:space-between; align-items:flex-end; gap:48px;">
+      <div style="display:flex; flex-direction:column; gap:16px; max-width:760px;">
+        <h2 style="margin:0; font-size:56px; font-weight:700; letter-spacing:-0.045em; line-height:1;">Why trade XAU/USD with Eightcap?</h2>
+        <p style="margin:0; font-size:18px; line-height:1.6;">Gold CFD trading with low costs, flexible sizing and the charts you already use.</p>
+      </div>
+      <div style="display:flex; gap:12px;"><span style="padding:14px 22px; background:#694AFF; color:#fff; border-radius:4px; font-size:16px; font-weight:600;">Open an account</span><span style="padding:14px 22px; background:#EBEBEB; border-radius:4px; font-size:16px; font-weight:500;">Compare accounts</span></div>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:20px;">
+      <sc-for list="{{ why }}" as="w" hint-placeholder-count="4">
+        <div style="background:#D5F0E0; border-radius:4px; padding:32px 28px 36px; display:flex; flex-direction:column; gap:12px; min-height:300px;">
+          <span style="width:56px; height:56px; border-radius:50%; background:#fff; display:flex; align-items:center; justify-content:center; font-size:20px; font-weight:700; color:#1B703F; margin-bottom:20px;">{{ w.i }}</span>
+          <div style="font-size:40px; font-weight:700; letter-spacing:-0.04em; line-height:1;">{{ w.stat }}</div>
+          <div style="font-size:19px; font-weight:600; line-height:1.3;">{{ w.t }}</div>
+          <p style="margin:0; font-size:15px; line-height:1.6;">{{ w.b }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <!-- Existing data tool block -->
+  <div style="padding:72px 80px; display:flex; flex-direction:column; gap:20px; border-top:1px solid #EBEBEB;">
+    <div data-screen-label="07 AI-powered market data tool" style="display:flex; flex-direction:column; gap:12px;">
+      <h2 style="margin:0; font-size:44px; font-weight:700; letter-spacing:-0.045em; line-height:1;">AI-powered market data tool</h2>
+      <p style="margin:0; font-size:14px; color:#4A4A4A;">The performance of CFD trading on past global economic events is not a reliable indicator of future trading performance.</p>
+    </div>
+    <div style="background:#F6F6F6; border-radius:8px; padding:24px; display:flex; flex-direction:column; gap:24px;">
+      <div style="background:#fff; border:1px solid #E3E3E3; border-radius:8px; padding:24px; display:flex; flex-direction:column; gap:20px;">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+          <div style="display:flex; align-items:center; gap:12px;"><span style="width:36px; height:36px; border:1px solid #E0C46C; border-radius:6px; background:#FFF8E1; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:700; color:#8A6A00;">Au</span><span style="font-size:22px; font-weight:700;">Gold</span></div>
+          <div style="display:flex; flex-direction:column; align-items:flex-end;"><span style="font-size:26px; font-weight:700;">$4070.59</span><span style="font-size:13px; color:#B42318;">−17.68 (−0.43%)</span></div>
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); font-size:13px;">
+          <div style="display:flex; flex-direction:column; gap:2px;"><span style="font-weight:600;">Commodity</span></div>
+          <div style="display:flex; flex-direction:column; gap:2px;"><span style="font-weight:600;">Group</span><span style="color:#4A4A4A;">Metals</span></div>
+          <div style="display:flex; flex-direction:column; gap:2px;"><span style="font-weight:600;">Unit</span><span style="color:#4A4A4A;">1 Troy Ounce</span></div>
+        </div>
+        <div style="display:flex; align-items:center; gap:10px;"><span style="font-size:16px; font-weight:600;">Opportunity</span><span style="padding:4px 10px; background:#FDE8E8; color:#A11D1D; border-radius:999px; font-size:13px; font-weight:600;">Bearish</span></div>
+        <div style="display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:6px;">
+          <sc-for list="{{ gauge }}" as="g" hint-placeholder-count="5"><div style="display:flex; flex-direction:column; gap:6px; align-items:center;"><span style="width:100%; height:6px; border-radius:999px; background:{{ g.c }};"></span><span style="font-size:11px; color:#4A4A4A;">{{ g.l }}</span></div></sc-for>
+        </div>
+        <span style="font-size:13px; color:#4A4A4A;">Ranking: #1 / 5 in Metals</span>
+      </div>
+      <div style="background:#fff; border:1px solid #E3E3E3; border-radius:8px; padding:16px; display:flex; justify-content:center;"><img src="assets/xau-ai-chart.png" alt="Gold AI sentiment and news volume chart" style="width:100%; max-width:1100px; height:auto; display:block;"></div>
+
+      <div data-screen-label="08 Overview" style="display:flex; flex-direction:column; gap:16px; padding-top:16px;">
+        <h3 style="margin:0; font-size:28px; font-weight:700; letter-spacing:-0.02em;">Overview</h3>
+        <div style="background:#fff; border:1px solid #E3E3E3; border-radius:8px; padding:8px 24px;">
+          <sc-for list="{{ overview }}" as="o" hint-placeholder-count="10">
+            <div style="display:grid; grid-template-columns:320px minmax(0,1fr); gap:24px; padding:13px 0; border-bottom:1px solid #EFEFEF; font-size:14px;"><span style="color:#4A4A4A;">{{ o.k }}</span><span style="font-weight:500;">{{ o.v }}</span></div>
+          </sc-for>
+        </div>
+      </div>
+
+      <div data-screen-label="09 Summary" style="display:flex; flex-direction:column; gap:16px; padding-top:16px;">
+        <h3 style="margin:0; font-size:28px; font-weight:700; letter-spacing:-0.02em;">Summary</h3>
+        <div style="display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px;">
+          <sc-for list="{{ summary }}" as="s" hint-placeholder-count="3">
+            <div style="background:#fff; border:1px solid #E3E3E3; border-radius:8px; padding:20px; display:flex; flex-direction:column; gap:14px;">
+              <span style="font-size:14px; color:#4A4A4A;">{{ s.k }}</span>
+              <span style="font-size:22px; font-weight:700; color:{{ s.c }};">{{ s.v }}</span>
+              <div style="display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:4px;"><sc-for list="{{ s.bars }}" as="b" hint-placeholder-count="5"><span style="height:6px; border-radius:999px; background:{{ b }};"></span></sc-for></div>
+              <span style="font-size:12px; color:#4A4A4A;">{{ s.note }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+
+      <div data-screen-label="10 Latest news" style="display:flex; flex-direction:column; gap:16px; padding-top:16px;">
+        <div style="display:flex; justify-content:space-between; align-items:center;"><h3 style="margin:0; font-size:28px; font-weight:700; letter-spacing:-0.02em;">Latest News</h3><div style="display:flex; gap:8px;"><span style="width:36px; height:36px; border-radius:50%; background:#fff; border:1px solid #D9D9D9; display:flex; align-items:center; justify-content:center;">‹</span><span style="width:36px; height:36px; border-radius:50%; background:#fff; border:1px solid #D9D9D9; display:flex; align-items:center; justify-content:center;">›</span></div></div>
+        <div style="display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px;">
+          <sc-for list="{{ news }}" as="n" hint-placeholder-count="4">
+            <div style="background:#fff; border:1px solid #E3E3E3; border-radius:8px; overflow:hidden; display:flex; flex-direction:column;">
+              <img src="{{ n.img }}" alt="{{ n.title }}" style="width:100%; aspect-ratio:1/1; object-fit:cover; object-position:top; display:block;">
+              <div style="padding:12px 16px 16px; display:flex; flex-direction:column; gap:8px;"><div style="display:flex; gap:6px; flex-wrap:wrap;"><sc-for list="{{ n.tags }}" as="t" hint-placeholder-count="2"><span style="font-size:11px; padding:3px 8px; border:1px solid #D9D9D9; border-radius:999px;">{{ t }}</span></sc-for></div></div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+
+      <div data-screen-label="11 Market companion" style="display:flex; flex-direction:column; gap:16px; padding-top:16px;">
+        <h3 style="margin:0; font-size:28px; font-weight:700; letter-spacing:-0.02em;">Market Companion</h3>
+        <div style="display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px;">
+          <sc-for list="{{ companion }}" as="m" hint-placeholder-count="4">
+            <div style="background:#fff; border:1px solid #E3E3E3; border-radius:8px; padding:16px; display:flex; flex-direction:column; gap:10px;">
+              <img src="{{ m.img }}" alt="{{ m.title }}" style="width:100%; aspect-ratio:484/300; object-fit:cover; object-position:top; display:block; border-radius:4px;">
+              <div style="display:flex; justify-content:space-between; font-size:12px; border-top:1px solid #EFEFEF; padding-top:10px;"><span>Impact <strong>{{ m.impact }}</strong></span><span>{{ m.date }}</span></div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+
+      <div data-screen-label="12 Calendar events" style="display:flex; flex-direction:column; gap:16px; padding-top:16px;">
+        <h3 style="margin:0; font-size:28px; font-weight:700; letter-spacing:-0.02em;">Calendar Events</h3>
+        <div style="display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:12px;">
+          <sc-for list="{{ calendar }}" as="c" hint-placeholder-count="5">
+            <div style="background:#fff; border:1px solid #E3E3E3; border-radius:8px; padding:16px; display:flex; flex-direction:column; gap:10px; font-size:12px;">
+              <div style="display:flex; justify-content:space-between; color:#4A4A4A;"><span>{{ c.date }}</span><span>{{ c.ccy }}</span></div>
+              <span style="font-size:14px; font-weight:600; line-height:1.3;">{{ c.title }}</span>
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:4px; color:#4A4A4A;"><span>Previous</span><span style="text-align:right; color:#000;">{{ c.prev }}</span><span>Forecast</span><span style="text-align:right; color:#000;">{{ c.fc }}</span></div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+
+      <div data-screen-label="13 Associated assets" style="display:flex; flex-direction:column; gap:16px; padding-top:16px;">
+        <h3 style="margin:0; font-size:28px; font-weight:700; letter-spacing:-0.02em;">Associated Assets</h3>
+        <div style="display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px;">
+          <sc-for list="{{ assets }}" as="a" hint-placeholder-count="4">
+            <div style="background:#fff; border:1px solid #E3E3E3; border-radius:8px; padding:16px; display:flex; flex-direction:column; gap:8px;">
+              <span style="font-size:14px; font-weight:600; text-align:center;">{{ a.n }}</span>
+              <span style="font-size:18px; font-weight:700; text-align:center;">{{ a.p }}</span>
+              <span style="font-size:12px; text-align:center; color:{{ a.c }};">{{ a.ch }}</span>
+              <div style="display:flex; justify-content:space-between; font-size:12px; margin-top:6px;"><span>Opportunity</span><span style="font-weight:600;">{{ a.o }}</span></div>
+              <div style="height:44px; border:1px dashed #C9C9C9; border-radius:4px; display:flex; align-items:center; justify-content:center; font-size:11px; color:#6B6B6B;">Sparkline</div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ 4a -->
+  <div data-screen-label="14 FAQs" style="padding:88px 80px; display:grid; grid-template-columns:400px minmax(0,1fr); gap:80px; border-top:1px solid #EBEBEB;">
+    <div style="display:flex; flex-direction:column; gap:16px;">
+      <h2 style="margin:0; font-size:56px; font-weight:700; letter-spacing:-0.045em; line-height:1;">XAU/USD FAQs</h2>
+      <p style="margin:0; font-size:17px; line-height:1.6;">Quick answers on gold CFD trading with Eightcap.</p>
+      <div style="margin-top:24px; background:#D5F1E1; border-radius:4px; padding:24px; display:flex; flex-direction:column; gap:12px;"><span style="font-size:17px; font-weight:600;">Still have questions?</span><span style="font-size:15px; line-height:1.5;">Our support team is available 24/7.</span><span style="align-self:flex-start; padding:11px 18px; background:#fff; border-radius:4px; font-size:15px; font-weight:500;">Contact support</span></div>
+    </div>
+    <div style="display:flex; flex-direction:column; border-top:1px solid #D9D9D9;">
+      <sc-for list="{{ faqs }}" as="q" hint-placeholder-count="5">
+        <div style="border-bottom:1px solid #D9D9D9; padding:24px 0; display:flex; flex-direction:column; gap:12px; cursor:pointer;" onClick="{{ q.toggle }}">
+          <div style="display:flex; justify-content:space-between; gap:24px; align-items:center;"><span style="font-size:20px; font-weight:600; letter-spacing:-0.01em;">{{ q.q }}</span><span style="width:32px; height:32px; flex:none; border-radius:50%; background:#EBEBEB; display:flex; align-items:center; justify-content:center; font-size:18px; font-weight:600;">{{ q.icon }}</span></div>
+          <sc-if value="{{ q.open }}" hint-placeholder-val="{{ false }}"><p style="margin:0; font-size:16px; line-height:1.65; max-width:760px;">{{ q.a }}</p></sc-if>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <!-- Learn the tools (existing) -->
+  <div data-screen-label="15 Learn the tools" style="padding:72px 80px; display:grid; grid-template-columns:minmax(0,1fr) 560px; gap:64px; align-items:center; border-top:1px solid #EBEBEB;">
+    <div style="display:flex; flex-direction:column; gap:16px;">
+      <span style="align-self:flex-start; font-size:12px; font-weight:600; padding:4px 10px; background:#D5F1E1; border-radius:4px;">Trader Toolkit</span>
+      <h2 style="margin:0; font-size:48px; font-weight:700; letter-spacing:-0.045em; line-height:1;">Learn the tools of the trade</h2>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:16px;">
+      <img src="assets/xau-learn-tools.png" alt="Trader Toolkit glass infographic grid" style="width:100%; height:auto; display:block; border-radius:8px;">
+      <p style="margin:0; font-size:15px; line-height:1.6;">Explore educational resources, how-to guides and platform tutorials designed to strengthen your trading knowledge.</p>
+      <span style="font-size:15px; font-weight:600;">Trader Toolkit →</span>
+    </div>
+  </div>
+
+  <!-- Disclaimer (existing) -->
+  <div data-screen-label="16 Disclaimer" style="padding:56px 80px; display:flex; flex-direction:column; gap:12px; border-top:1px solid #EBEBEB;">
+    <h3 style="margin:0; font-size:28px; font-weight:700; letter-spacing:-0.02em;">Disclaimer</h3>
+    <p style="margin:0; font-size:13px; line-height:1.6;">(1) International languages: Chinese, Thai, Vietnamese, Korean, German, Italian, Spanish, French</p>
+    <p style="margin:0; font-size:13px; line-height:1.6;">(2) Spreads and Commissions refer to trading on a Raw Account. A Standard Account is also available with different trading conditions.</p>
+    <p style="margin:0; font-size:13px; line-height:1.6;">(3) We do not charge any internal fees on deposits. Please note deposits from non-Australian banking institutions may attract intermediary transfer and/or conversion fees. Any such fees will be passed onto you.</p>
+    <div style="display:flex; flex-direction:column; align-items:center; gap:12px; padding-top:24px;">
+      <span style="font-size:13px; color:#4A4A4A;">Connect with us</span>
+      <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center;"><sc-for list="{{ socials }}" as="s" hint-placeholder-count="6"><span style="font-size:13px; font-weight:500; padding:8px 14px; background:#D5F1E1; border-radius:4px;">{{ s }}</span></sc-for></div>
+    </div>
+  </div>
+
+  <!-- Marquee (existing) -->
+  <div data-screen-label="17 Trade now marquee" style="overflow:hidden; padding:24px 0 48px; display:flex; flex-direction:column; gap:0;">
+    <div style="white-space:nowrap; font-size:96px; font-weight:700; letter-spacing:-0.045em; line-height:1.05; margin-left:-180px;">Trade now Trade now Trade now Trade now Trade now</div>
+    <div style="white-space:nowrap; font-size:96px; font-weight:700; letter-spacing:-0.045em; line-height:1.05; margin-left:-60px;">Trade now Trade now Trade now Trade now Trade now</div>
+    <div style="display:flex; justify-content:center; padding-top:32px;"><span style="padding:16px 28px; background:#694AFF; color:#fff; border-radius:4px; font-size:17px; font-weight:600;">Start trading</span></div>
+  </div>
+
+  <div data-screen-label="18 Footer" style="background:#000; color:#fff; padding:64px 64px 80px; display:flex; flex-direction:column; gap:120px;">
+    <div style="display:grid; grid-template-columns:480px repeat(4,minmax(0,1fr)); gap:64px;">
+      <div style="display:flex; flex-direction:column; gap:16px;">
+        <span style="font-size:17px; font-weight:500; color:#8A8A8A;">Company information</span>
+        <p style="margin:0; font-size:17px; line-height:1.6;">Eightcap is a brand of Eightcap Pty Ltd (ABN 73 139 495 944) regulated by the Australian Securities and Investments Commission (AFSL 391441).</p>
+        <p style="margin:0; font-size:17px; line-height:1.6;">Eightcap Pty Ltd is located at Level 37, Rialto South Tower, 525 Collins Street, Melbourne, VIC, 3000, Australia.</p>
+      </div>
+      <sc-for list="{{ footerCols }}" as="col" hint-placeholder-count="4">
+        <div style="display:flex; flex-direction:column; gap:14px;">
+          <span style="font-size:17px; font-weight:500; color:#8A8A8A; margin-bottom:6px;">{{ col.h }}</span>
+          <sc-for list="{{ col.links }}" as="l" hint-placeholder-count="4"><span style="font-size:17px; font-weight:600;">{{ l }}</span></sc-for>
+        </div>
+      </sc-for>
+    </div>
+    <img src="assets/eightcap-logo.png" alt="Eightcap" style="width:100%; height:auto; display:block; filter:brightness(0) invert(1);">
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;longPct&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:41,&quot;min&quot;:1,&quot;max&quot;:99,&quot;step&quot;:1,&quot;unit&quot;:&quot;%&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Sentiment&quot;}}">
+class Component extends DCLogic {
+  state = { open: 0, tf: 3 };
+  renderVals() {
+    const longPct = Math.max(1, Math.min(99, this.props.longPct ?? 41));
+    const bias = longPct >= 50 ? 'long' : 'short';
+    const tfLabels = ['15m', '1H', '4H', '1D', '1W', '1M'];
+    const seg = (active, col) => ['Very bearish', 'Bearish', 'Neutral', 'Bullish', 'Very bullish'].map((l, i) => i === active ? col : '#E6E6E6');
+    const faqs = [
+      { q: 'What is the XAUUSD price?', a: 'The XAUUSD price is the cost of one troy ounce of gold in US dollars. Our XAUUSD live chart streams indicative buy and sell prices during market hours — check your platform for tradable quotes.' },
+      { q: 'How do I trade XAUUSD with Eightcap?', a: 'Open an Eightcap account, fund it and search for XAUUSD on TradingView, MT4, MT5 or TradeLocker. Choose buy if you think gold will rise or sell if you think it will fall.' },
+      { q: 'What are the trading hours for XAU/USD?', a: 'XAUUSD trades from 01:01 to 23:59 server time (GMT+3), Monday to Friday. Check our trading hours page for holiday changes.' },
+      { q: 'What does gold CFD trading cost?', a: 'Spreads on XAUUSD start from 1.2 pips with no commission on Standard or Raw accounts. Overnight swap charges may apply if you hold a position past the daily rollover.' },
+      { q: 'Do I own gold when I trade an XAU/USD CFD?', a: 'No. A CFD tracks the gold price, so you never take delivery of bullion. You can profit or lose from price moves in either direction, and leverage magnifies both.' }
+    ];
+    return {
+      longPct, shortPct: 100 - longPct, bias,
+      majorityPct: bias === 'long' ? longPct : 100 - longPct,
+      tfs: tfLabels.map((l, i) => ({ l, bg: this.state.tf === i ? '#000' : '#EBEBEB', fg: this.state.tf === i ? '#fff' : '#000', pick: () => this.setState({ tf: i }) })),
+      specs: [
+        { k: 'Symbol', v: 'XAUUSD' }, { k: 'Name', v: 'Gold / US Dollar' }, { k: 'Currency', v: 'USD' },
+        { k: 'Trading hours (GMT+3)', v: '01:01 - 23:59' }, { k: 'Minimum spread on Standard account (pips)', v: '1.2' },
+        { k: 'Minimum spread on Raw account (pips)', v: '1.2' }, { k: 'Commission Standard account', v: 'No Commission' },
+        { k: 'Commission Raw account', v: 'No Commission' }, { k: 'Long Swap', v: '—' }, { k: 'Short Swap', v: '—' },
+        { k: 'Contract Size', v: '100' }, { k: 'Contract steps, Lots', v: '0.01' }, { k: 'Minimum contract size, Lots', v: '0.01' },
+        { k: 'Maximum contract size, Lots', v: '30' }, { k: 'Eightcap Global Limited (SYC regulated): Leverage up to', v: '1:500' },
+        { k: 'Trading platform', v: 'MT5, MT4, TradingView, TradeLocker' }, { k: 'Exchange', v: '—' }, { k: 'Instrument type', v: 'Commodities' }
+      ],
+      facts: [
+        { k: 'Symbol', v: 'XAUUSD' }, { k: 'Quoted in', v: 'US dollars per troy ounce' }, { k: 'Contract size', v: '100 oz' },
+        { k: 'Min. trade size', v: '0.01 lots' }, { k: 'Spread from', v: '1.2 pips' }, { k: 'Platforms', v: 'TradingView, MT4, MT5, TradeLocker' }
+      ],
+      drivers: [
+        { n: '01', t: 'The US dollar', b: 'Gold is priced in dollars, so a weaker USD usually lifts XAU/USD and a stronger one weighs on it.' },
+        { n: '02', t: 'Interest rates', b: 'Gold pays no yield. Falling rates make it more attractive; rising rates tend to pull it lower.' },
+        { n: '03', t: 'Inflation data', b: 'CPI and PCE releases shape rate expectations and gold\u2019s appeal as an inflation hedge.' },
+        { n: '04', t: 'Risk and central banks', b: 'Geopolitical stress and central-bank buying can drive safe-haven demand for gold.' }
+      ],
+      why: [
+        { i: '$', stat: '1.2', t: 'Spreads from 1.2 pips', b: 'Tight XAUUSD pricing with no commission on either account type.' },
+        { i: '.01', stat: '0.01', t: 'Flexible lot sizes', b: 'Start small from 0.01 lots and scale up to 30 lots per trade.' },
+        { i: 'TV', stat: '4', t: 'Pro platforms', b: 'Chart and trade gold on TradingView, MT4, MT5 or TradeLocker.' },
+        { i: 'AI', stat: 'AI', t: 'Built-in market data', b: 'Opportunity scores, news sentiment and calendar events on every page.' }
+      ],
+      gauge: ['Very bearish', 'Bearish', 'Neutral', 'Bullish', 'Very bullish'].map((l, i) => ({ l, c: i === 1 ? '#F0625A' : '#E6E6E6' })),
+      overview: [
+        { k: "Day's Range", v: '4,033.37 – 4,092.78' }, { k: '52 Week Range', v: '2,563.94 – 4,381.29' },
+        { k: 'Previous Close', v: '4,088.27' }, { k: "Today's Open", v: '4,088.27' }, { k: 'Last Day Change', v: '−0.43%' },
+        { k: 'Next Impactful Event', v: 'Consumer Price Index ex Food & Energy (YoY) Inflation' }, { k: 'Next Impactful Event Date', v: '13 Nov 2026' },
+        { k: 'Chart Trend', v: 'Bearish' }, { k: 'Support 1', v: '4,027.23' }, { k: 'Resistance 1', v: '4,120.21' }
+      ],
+      summary: [
+        { k: 'Price Trend', v: 'Bearish', c: '#B42318', bars: seg(1, '#F0625A'), note: 'vs. metals average' },
+        { k: 'News Sentiment', v: 'Bullish', c: '#1B703F', bars: seg(3, '#3FBF6A'), note: 'vs. metals average' },
+        { k: 'Volatility', v: 'Neutral', c: '#000', bars: seg(2, '#F2C14E'), note: 'XAUUSD' }
+      ],
+      news: [
+        { img: 'assets/xau-news-1.png', title: 'Rabobank reports Bank of Canada rate hike: a cautious path ahead', tags: ['XAUUSD', 'CAD'] },
+        { img: 'assets/xau-news-2.png', title: 'Westpac reports major consumer sentiment drop amid cost-of-living crisis', tags: ['XAUUSD', 'AUD'] },
+        { img: 'assets/xau-news-3.png', title: 'ING Economics: Belgium\u2019s budget crisis remains troubling yet manageable', tags: ['XAUUSD', 'EUR'] },
+        { img: 'assets/xau-news-1.png', title: 'Rabobank reports Bank of Canada rate hike: a cautious path ahead', tags: ['XAUUSD', 'CAD'] }
+      ],
+      companion: [
+        { img: 'assets/xau-comp-1.png', title: 'October 2026 Existing Home Sales data release expected to show modest improvement', impact: 'Low', date: '12 Nov 2026' },
+        { img: 'assets/xau-comp-2.png', title: 'Existing Home Sales MoM data for October 2026 set to release on November 12', impact: 'Low', date: '12 Nov 2026' },
+        { img: 'assets/xau-comp-3.png', title: 'U.S. Core Producer Prices expected to rise 0.3%', impact: 'Medium', date: '13 Nov 2026' },
+        { img: 'assets/xau-comp-1.png', title: 'October 2026 Existing Home Sales data release expected to show modest improvement', impact: 'Low', date: '12 Nov 2026' }
+      ],
+      calendar: [
+        { date: '10 Nov', ccy: 'USD', title: 'Fed Governor speech', prev: '—', fc: '—' },
+        { date: '11 Nov', ccy: 'USD', title: 'NFIB Business Optimism', prev: '98.8', fc: '98.5' },
+        { date: '12 Nov', ccy: 'USD', title: 'Wholesale inventories MoM', prev: '0.1%', fc: '0.0%' },
+        { date: '13 Nov', ccy: 'USD', title: 'CPI ex Food & Energy YoY', prev: '3.0%', fc: '3.0%' },
+        { date: '13 Nov', ccy: 'USD', title: 'Initial Jobless Claims', prev: '228K', fc: '225K' }
+      ],
+      assets: [
+        { n: 'Silver', p: '$51.84', ch: '−0.53 (−1.01%)', c: '#B42318', o: 'Bearish' },
+        { n: 'Brent Crude', p: '$100.472', ch: '−0.78 (−0.77%)', c: '#B42318', o: 'Bullish' },
+        { n: 'US100', p: '$27,012', ch: '+125 (+0.46%)', c: '#1B703F', o: 'Bullish' },
+        { n: 'US500', p: '$7,385', ch: '+29 (+0.39%)', c: '#1B703F', o: 'Bullish' }
+      ],
+      footerCols: [
+        { h: 'Company', links: ['About us', 'Trading hours', 'Contact us', 'News & Awards', 'FAQ'] },
+        { h: 'Go to', links: ['Traders', 'Partners', 'Embedded', 'Careers'] },
+        { h: 'Legal', links: ['Legal documents'] },
+        { h: 'Follow us', links: ['Facebook', 'Instagram', 'LinkedIn', 'Tiktok', 'X', 'Youtube'] }
+      ],
+      socials: ['Facebook', 'Instagram', 'LinkedIn', 'TradingView', 'X', 'YouTube'],
+      faqs: faqs.map((f, i) => ({ ...f, open: this.state.open === i, icon: this.state.open === i ? '−' : '+', toggle: () => this.setState(s => ({ open: s.open === i ? -1 : i })) }))
+    };
+  }
+}
+</script>
+</body>
+</html>
